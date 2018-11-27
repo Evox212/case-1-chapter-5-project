@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 5
+   Case Problem 1
+   
+   Author: Damian Lester   
+   Date: 11/25/18    
+   
+   Filename: gp_layout.css
+
+   This file contains the layout styles and media
+   queries used with sample pages from the Golden
+   Pulps website.
+
+*/
+
+
+/* Import Basic Design Styles Used on All Screens */
+
+@import url("gp_designs.css");
+
+/* Flex Layout Styles */
+
+body {
+    display: flex;
+    -webkit-flex-wrap: row ;
+    flex-wrap: row ;
+}
+
+section#sheet {
+    -webkit-flex-grow: 3;
+    -webkit-flex-shrink: 1;
+    -webkit-flex-basis: 301px;
+    flex-grow: 3;
+    flex-shrink: 1;
+    flex-basis: 301px;
+}
+
+body > article {
+    -webkit-flex-grow: 1;
+    -webkit-flex-shrink: 3;
+    -webkit-flex-basis: 180px;
+    flex-grow: 1;
+    flex-shrink: 3;
+    flex-basis: 180px;
+}
+
+
+
+
+
+/* ============================================
+	Mobile Devices: 0 - 480 pixels
+   ============================================
+*/
+
+@media only screen and (max-width: 480px) {
+    section#sheet img.panel {
+        display: flex;
+        -webkit-flex-wrap: row ;
+        flex-wrap: row ;
+        width: 100%;
+    }
+
+    nav.horizontal >  ul > li a{
+        display: flex;
+        height: 200px;
+        align-items: flex-end;
+        order: 99;
+    }
+    
+    body > footer {
+        display: flex;
+        -webkit-flex-order: 100;
+    }
+}
+    
+
+
+/* ===================================================
+	Tablet and Desktop Devices: Greater than 480 pixels
+   ===================================================
+*/
+
+@media only screen and (max-width: 481px) {
+    nav.horizontal > ul{
+        display: flex;
+        -webkit-flex: row nowrap;
+        flex-wrap:row nowrap;
+        height: 40px;
+    }
+
+    nav.horizontal > ul > li {
+        display: flex;
+        flex: 1 1 auto;
+    }
+
+    .size1 {
+        width: 100%;
+    }
+
+    .size2 {
+        width: 60%;
+    }
+
+    .size3 {
+        width:40%;
+    }
+
+    .size4 {
+        width: 30%;
+    }
+}
